@@ -1,49 +1,77 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+        <title>reveal.js</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css">
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>Slide 1</section>
+                <section>Slide 2</section>
+            </div>
+        </div>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
-
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
-
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+        <script>
+            Reveal.initialize({
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ],
+                display: 'block',
+                controls: true,
+                controlsTutorial: true,
+                progress: true,
+                slideNumber: false,
+                history: false,
+                keyboard: true,
+                overview: true,
+                center: true,
+                touch: true,
+                loop: false,
+                shuffle: false,
+                fragments: true,
+                fragmentInURL: false,
+                embedded: false,
+                help: true,
+                showNotes: false,
+                mouseWheel: false,
+                hideAddressBar: true,
+                previewLinks: false,
+                parallaxBackgroundVertical: null,
+                controlsLayout: 'bottom-right', // "edges" or "bottom-right"
+                controlsBackArrows: 'faded', // "faded", "hidden" "visible"
+                autoPlayMedia: null, // null (data-autoplay)/ true / false
+                autoSlide: 0, // # milliseconds between auto slide
+                autoSlideStoppable: true, // Stop auto-sliding after user input
+                autoSlideMethod: Reveal.navigateNext, // navigation when auto-sliding
+                defaultTiming: 120, // auto slide timing per slide
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+                transitionSpeed: 'default', // default/fast/slow
+                backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+                viewDistance: 3, // Number of slides away from the current that are visible
+                parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+                parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
+                parallaxBackgroundHorizontal: null // # pixels to move the parallax background per slide
+            });
+        </script>
+    </body>
 </html>
